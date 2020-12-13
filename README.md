@@ -7,8 +7,9 @@ Based on node.js version 8 (higher versions are not supported as of 2020 with pi
 ### Build
 Clone this repository, change into the directory and build the Docker image (this will download all needed base images and bake the Dockerfile instructions into a new image called `f1ix/rpi-pimatic-docker`):
 ```bash
-docker build -t f1ix/rpi-pimatic-docker .
+docker build --build-arg timezone=$( cat /etc/timezone) -t f1ix/rpi-pimatic-docker .
 ```
+The `build-arg` flag is needed to pass the correct timezone to the Docker image. You can specify it manually as a string or acquire it from the host system as in this example.
 
 ### Configure
 The example config `config_default.json` with login *admin:admin* is baked into the Docker image upon build. The config file is the central point of configuration for your pimatic instance. You can define ports, usernames and passwords, load plugins and save credentials and API keys for third party services used by plugins there.
