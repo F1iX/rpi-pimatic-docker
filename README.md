@@ -19,7 +19,7 @@ To replace the default `config.json`, mount a customized copy to `/home/pimatic-
 ### Run
 Spawn a new container running pimatic based on our newly created image (adapt full path to your `config.json`):
 ```bash
-docker run -v ~/rpi-pimatic-dockerfile/data/config.json:/home/pimatic-app/config.json --net=host --name=pimatic-app --restart unless-stopped f1ix/rpi-pimatic-docker
+docker run -v ~/rpi-pimatic-docker/data/config.json:/home/pimatic-app/config.json --net=host --name=pimatic-app --restart unless-stopped f1ix/rpi-pimatic-docker
 ```
 Installing all needed components such as sqlite **can take quite some minutes!**
 
