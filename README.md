@@ -9,7 +9,7 @@ Clone this repository, change into the directory and build the Docker image (thi
 ```bash
 docker build --build-arg timezone=$( cat /etc/timezone) -t f1ix/rpi-pimatic-docker .
 ```
-The `build-arg` flag is needed to pass the correct timezone to the Docker image. You can specify it manually as a string or acquire it from the host system as in this example.
+The `build-arg` flag is needed to pass the correct timezone to the Docker image. You can specify it manually as a string or acquire it from the host system as in this example (check with `date` and adapt using `raspi-config` if needed).
 
 ### Configure
 The example config `config_default.json` with login *admin:admin* is baked into the Docker image upon build. The config file is the central point of configuration for your pimatic instance. You can define ports, usernames and passwords, load plugins and save credentials and API keys for third party services used by plugins there.
